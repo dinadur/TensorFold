@@ -27,7 +27,7 @@ Each release's page on GitHub has its notes and measurements. See [the 1.0.0 rel
 
 - Sessions: a restore whose page write fails mid-stream gives back its in-flight reads' staging buffers, and a restore or park whose tier queue can't take it leaves no job behind, so neither the next restore nor the store's shutdown waits forever after such an error (#2615).
 
-- Living Weights: a refused round draws fresh extra question wordings, repeatable from the lesson and round, for its existing pocket neurons' router while their output fit continues; the original answers, held-out answers, unseen checks and safety checks stay fixed, and a first round that passes is unchanged (#NNNN, refs #1587).
+- Living Weights: a refused round draws fresh extra question wordings, repeatable from the lesson and round, for its existing pocket neurons' router while their output fit continues; the original answers, held-out answers, unseen checks and safety checks stay fixed, and a first round that passes is unchanged (#2650, refs #1587).
 
 - Release checks: the release privacy check walks the release tree in Zig instead of the shell `find`, so `check-release-paths` and packaging's stage check run one implementation on every host and `zig build test` passes them on native Windows; a symlink, an unreadable entry or a file given as the tree is refused, and the build-root argument is validated first, as before (#2614).
 
