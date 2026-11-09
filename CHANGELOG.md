@@ -27,6 +27,8 @@ Each release's page on GitHub has its notes and measurements. See [the 1.0.0 rel
 
 - Sessions: a restore whose page write fails mid-stream gives back its in-flight reads' staging buffers, and a restore or park whose tier queue can't take it leaves no job behind, so neither the next restore nor the store's shutdown waits forever after such an error (#2615).
 
+- Living Weights: a refused round draws fresh extra question wordings, repeatable from the lesson and round, for its existing pocket neurons' router while their output fit continues; the original answers, held-out answers, unseen checks and safety checks stay fixed, and a first round that passes is unchanged (#NNNN, refs #1587).
+
 - Release checks: the release privacy check walks the release tree in Zig instead of the shell `find`, so `check-release-paths` and packaging's stage check run one implementation on every host and `zig build test` passes them on native Windows; a symlink, an unreadable entry or a file given as the tree is refused, and the build-root argument is validated first, as before (#2614).
 
 - Flash Next on Metal and HIP: a config.json with a legacy `rope_scaling` (YaRN) is now refused by name; a `rope_parameters` type other than default already was. LFM2 and Kolibri-1 now refuse both forms; these readers ran plain RoPE under them. Metal Flash Next still takes its long-context factor from `--context` (#2604, fixes part of #2562). Thanks to @jschmied.
@@ -65,6 +67,7 @@ Each release's page on GitHub has its notes and measurements. See [the 1.0.0 rel
   point-to-point references it leaves out on such a ring. Off by default; two- and three-rank behaviour is unchanged
   (#2352, part of #1971). Idea from blaesus/dsgx10 and Picom-code/pico-dgx-ds4's ring notes, our implementation.
   Thanks to @Bizuayeu for the four-GB10 ring run.
+
 
 - Server: control bytes in a request line (C0, DEL and C1) appear in the access log as `\xNN`, so a request cannot write terminal escapes into the log; ordinary lines are unchanged (#2542). Thanks to @chadhurley25075-png.
 

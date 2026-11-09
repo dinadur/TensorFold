@@ -142,7 +142,7 @@ pub fn Learner(comptime H: type) type {
             if (has_pocket and l.trainer != null) {
                 if (lesson.save) try whole_lessons.healLive(l) else try whole_lessons.heal(l);
             }
-            l.lesson = lesson;
+            l.lesson = try examples.forReroute(l.gpa, lesson, l.readsConversations(), l.whole, H.max_rows, &l.plain);
             if (lesson.undo) {
                 l.phase = .undo;
                 return;
