@@ -4,6 +4,8 @@ Each release's page on GitHub has its notes and measurements. See [the 1.0.0 rel
 
 ## Unreleased
 
+- Flash Next on Metal (M1 through M4): a decode window of five rows or more now runs its 4-bit experts grouped by expert, so rows that pick the same expert share its launch and replies keep their tokens. A copy stretch decodes 7.7% faster on an M3 Ultra (256.6 to 276.3 tok/s); prose rounds, four rows or fewer, are unchanged. `TF_FLASHNEXT_GROUPED_ROWS` sets the first grouped width and `0` turns it off (#2784, part of #2764).
+
 - Docs: the optimization ledger marks the rows that have open PRs and adds DSpine as row 28 (#2681). Thanks to @jschmied.
 
 - GLM-5.3-Flash on Metal with `--vision`: a prompt chunk sends the vision tower only the images that end after its start, so two interleaved image prompts no longer re-encode images their earlier chunks already injected (12 images through the tower instead of 18 in a host test); each image is still encoded on its own and read through its own span, so the rows a chunk reads are unchanged (#2744).
