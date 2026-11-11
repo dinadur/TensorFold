@@ -250,6 +250,7 @@ pub fn build(b: *std.Build) void {
     @import("zig/build/server.zig").cpuArtefacts(b, b.graph.host, optimize, build_options);
     @import("zig/build/mcdma_pair.zig").add(b, target);
     @import("zig/build/cache_index_timing.zig").step(b);
+    @import("zig/build/host_draw_timing.zig").step(b);
     sys_build.wire(b);
     @import("zig/build/checkpoint_config.zig").tests(b);
     @import("zig/build/checkpoint_config.zig").wire(b);
